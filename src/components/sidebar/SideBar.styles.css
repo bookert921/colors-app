@@ -1,16 +1,21 @@
 .sidebar {
-  position: fixed;
-  top: 0;
-  z-index: 0;
-  width: 180px;
+  display: flex;
+  min-height: 100vh;
+  max-width: 200px;
+  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
   background-color: #d5d7d7;
-  text-align: left;
-  height: 100%;
-  padding: 140px 20px;
   box-shadow: 0 2px 5px grey;
 }
 
+.color-link {
+  text-decoration: none;
+  color: black;
+}
+
 .btn {
+  margin-top: 50%;
   margin-bottom: 20px;
   border: 1px solid black;
 }
@@ -19,11 +24,8 @@
   border: 1px solid blue;
 }
 
-.color-link {
-  text-decoration: none;
-  color: black;
-}
-
-li {
-  list-style: none;
+@media screen and (max-width: 420px) {
+  .sidebar {
+    display: none;
+  }
 }

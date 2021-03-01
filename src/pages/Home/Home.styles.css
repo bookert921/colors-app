@@ -1,0 +1,13 @@
+.content-container {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+}
+
+.list-view {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}

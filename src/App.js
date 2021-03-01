@@ -1,8 +1,5 @@
 import React from 'react';
-import Header from './components/header/Header.component';
-import SideBar from './components/sidebar/SideBar.component';
-import ColorsList from './components/colors-list/ColorsList.component';
-import Pagination from './components/pagination/Pagination.component';
+import Home from './pages/Home/Home';
 
 /* STYLES */
 import './App.css';
@@ -17,9 +14,7 @@ class App extends React.Component {
       loading: false,
       currentPage: 1,
     }
-
   }
-
 
   componentDidMount() {
     const getColors = async () => {
@@ -47,34 +42,17 @@ class App extends React.Component {
 
 
   render() {
-    const { colors, currentPage } = this.state;
-
-    // Colors View (Pagination Magic)
-    const colorsPerPage = 12;
-    const indexOfLastColorSet = currentPage * colorsPerPage;
-    const indexOfFirstColorSet = indexOfLastColorSet - colorsPerPage;
-    const currentColors = colors.slice(indexOfFirstColorSet, indexOfLastColorSet);
+    const { colors, currentPage, loading, searchColors } = this.state;
 
     return (
       <div className="App">
-        <Header
-          searchFunction={this.handleSearch}
-          searchField={this.state.searchColors} />
-        <SideBar />
-        <main className="content-container">
-          <div className="showpiece"></div>
-          <div className="list-view">
-            <ColorsList
-              // colorsList={this.state.colors}
-              colorsList={currentColors}
-              loading={this.state.loading}
-              searchField={this.state.searchColors} />
-            <Pagination
-              colorsPerPage={colorsPerPage}
-              allColors={this.state.colors.length}
-              paginate={this.paginate} />
-          </div>
-        </main>
+        <Home
+          colors={colors}
+          loading={loading}
+          currentPage={currentPage}
+          searchColors={searchColors}
+          handleSearch={this.handleSearch}
+          paginate={this.paginate} />
       </div>
     );
   }
