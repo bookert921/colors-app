@@ -16,7 +16,7 @@ const SearchBar = ({
             <input
                 className="form-control me-2"
                 type="search"
-                ariaLabel="Search"
+                aria-label="Search"
                 value={searchField}
                 placeholder={placeholder}
                 onChange={handleSearch} />

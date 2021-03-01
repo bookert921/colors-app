@@ -1,27 +1,32 @@
 import React from 'react';
 import ColorsList from './components/colors-list/ColorsList.component';
+import Pagination from './components/pagination/Pagination.component';
 
 import './App.css';
-import Header from './components/header/Header.component.jsx';
+import Header from './components/header/Header.component';
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      colors: '',
-      searchColors: ''
+      colors: [],
+      searchColors: '',
+      loading: false,
+      currentPage: 1,
     }
   }
 
   componentDidMount() {
     const getColors = async () => {
       try {
+        this.setState({ loading: true });
         const response = await fetch('https://my-colors-api.herokuapp.com/api/v1/colors/')
         const data = await response.json();
-        const colors = await data.colors;
-        this.setState({ colors: colors });
+        const colors = data.colors;
+        this.setState({ colors });
+        this.setState({ loading: false });
       } catch (err) {
-        console.error(err)
+        console.error('Database currently experiencing diffiiculties. Please try again later.', err)
       }
     }
     getColors();
@@ -31,8 +36,19 @@ class App extends React.Component {
     this.setState({ searchColors: searchColors })
   }
 
+  paginate = (pageNumber) => {
+    this.setState({ currentPage: pageNumber })
+  }
+
+
   render() {
-    const colors = Array.from(this.state.colors);
+    const { colors, currentPage } = this.state;
+
+    // Colors View (Pagination Magic)
+    const colorsPerPage = 12;
+    const indexOfLastColorSet = currentPage * colorsPerPage;
+    const indexOfFirstColorSet = indexOfLastColorSet - colorsPerPage;
+    const currentColors = colors.slice(indexOfFirstColorSet, indexOfLastColorSet);
 
     return (
       <div className="App">
@@ -40,8 +56,14 @@ class App extends React.Component {
           searchFunction={this.handleSearch}
           searchField={this.state.searchColors} />
         <ColorsList
-          colorsList={colors}
+          // colorsList={this.state.colors}
+          colorsList={currentColors}
+          loading={this.state.loading}
           searchField={this.state.searchColors} />
+        <Pagination
+          colorsPerPage={colorsPerPage}
+          allColors={this.state.colors.length}
+          paginate={this.paginate} />
       </div>
     );
   }

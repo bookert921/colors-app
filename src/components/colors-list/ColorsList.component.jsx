@@ -3,7 +3,11 @@ import ColorCard from '../color-card/ColorCard.component';
 
 import './ColorsList.styles.css';
 
-const ColorsList = ({ searchField, colorsList }) => {
+const ColorsList = ({ searchField, colorsList, loading }) => {
+    if (loading) {
+        return <h2>Loading...</h2>;
+    }
+
     const cards = [];
     colorsList.forEach(color => {
         const { id, color_name, hex_value } = color;
