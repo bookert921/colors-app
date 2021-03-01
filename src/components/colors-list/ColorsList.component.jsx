@@ -4,8 +4,19 @@ import ColorCard from '../color-card/ColorCard.component';
 import './ColorsList.styles.css';
 
 const ColorsList = ({ searchField, colorsList, loading }) => {
+    /* LOADER */
     if (loading) {
-        return <h2>Loading...</h2>;
+        return (
+            <div className="d-flex justify-content-center">
+                <div
+                    className="spinner-border"
+                    role="status">
+                    <span className="visually-hidden">
+                        Loading...
+                    </span>
+                </div>
+            </div>
+        )
     }
 
     const cards = [];
@@ -17,7 +28,7 @@ const ColorsList = ({ searchField, colorsList, loading }) => {
         cards.push(<ColorCard key={id} hex={hex_value} color={color_name} />);
     })
     return (
-        <div className="container">
+        <div className="color-list">
             {cards}
         </div>
     );

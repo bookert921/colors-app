@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from './components/header/Header.component';
+import SideBar from './components/sidebar/SideBar.component';
 import ColorsList from './components/colors-list/ColorsList.component';
 import Pagination from './components/pagination/Pagination.component';
 
+/* STYLES */
 import './App.css';
-import Header from './components/header/Header.component';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +17,9 @@ class App extends React.Component {
       loading: false,
       currentPage: 1,
     }
+
   }
+
 
   componentDidMount() {
     const getColors = async () => {
@@ -55,15 +60,21 @@ class App extends React.Component {
         <Header
           searchFunction={this.handleSearch}
           searchField={this.state.searchColors} />
-        <ColorsList
-          // colorsList={this.state.colors}
-          colorsList={currentColors}
-          loading={this.state.loading}
-          searchField={this.state.searchColors} />
-        <Pagination
-          colorsPerPage={colorsPerPage}
-          allColors={this.state.colors.length}
-          paginate={this.paginate} />
+        <SideBar />
+        <main className="content-container">
+          <div className="showpiece"></div>
+          <div className="list-view">
+            <ColorsList
+              // colorsList={this.state.colors}
+              colorsList={currentColors}
+              loading={this.state.loading}
+              searchField={this.state.searchColors} />
+            <Pagination
+              colorsPerPage={colorsPerPage}
+              allColors={this.state.colors.length}
+              paginate={this.paginate} />
+          </div>
+        </main>
       </div>
     );
   }

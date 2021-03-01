@@ -9,9 +9,11 @@ const Header = ({ searchField, searchFunction }) => {
     return (
         <nav className="navbar" >
             <div className="container-fluid">
-                <div className="navbar-brand">
-                    <img src={logo} alt="" />
-                </div>
+                <a href="/">
+                    <div className="navbar-brand">
+                        <img src={logo} alt="" />
+                    </div>
+                </a>
                 <SearchBar
                     placeholder="Search"
                     searchField={searchField}

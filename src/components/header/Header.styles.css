@@ -1,3 +1,8 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: #353c3c;
+  z-index: 2;
+  box-shadow: 2px 0 10px black;
 }

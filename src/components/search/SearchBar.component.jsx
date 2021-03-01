@@ -14,7 +14,7 @@ const SearchBar = ({
     return (
         <form>
             <input
-                className="form-control me-2"
+                className="form-control"
                 type="search"
                 aria-label="Search"
                 value={searchField}

@@ -1,0 +1,29 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  width: 180px;
+  background-color: #d5d7d7;
+  text-align: left;
+  height: 100%;
+  padding: 140px 20px;
+  box-shadow: 0 2px 5px grey;
+}
+
+.btn {
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.btn:hover {
+  border: 1px solid blue;
+}
+
+.color-link {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
