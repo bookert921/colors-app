@@ -7,7 +7,7 @@ const ColorsListView = ({ currentColors, loading, searchColors, paginate, colors
     return (
         <div className="list-view">
             <ColorsList
-                // colorsList={colors}
+                colors={colors}
                 colorsList={currentColors}
                 loading={loading}
                 searchField={searchColors} />

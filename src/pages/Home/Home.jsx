@@ -1,12 +1,19 @@
 import React from 'react';
 import Header from '../../components/header/Header.component';
 import SideBar from '../../components/sidebar/SideBar.component';
-import ColorsListView from '../ColorsList/ColorsList';
+import ColorsListView from '../ColorsList/ColorsListView';
 
 
 import './Home.styles.css';
 
-const Home = ({ colors, currentPage, paginate, loading, searchColors, handleSearch }) => {
+const Home = ({
+    colors,
+    currentPage,
+    paginate,
+    loading,
+    searchColors,
+    handleSearch }) => {
+
     // Colors View (Pagination Magic)
     const colorsPerPage = 12;
     const indexOfLastColorSet = currentPage * colorsPerPage;
