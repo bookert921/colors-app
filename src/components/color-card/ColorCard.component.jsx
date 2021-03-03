@@ -9,7 +9,7 @@ const ColorCard = ({ id, color, hex }) => {
 
     const handleColorSelect = (id) => {
         history.push(`/colors/${id}`)
-    }
+    };
 
     return (
         <div className="card" onClick={() => handleColorSelect(id)} >
@@ -21,7 +21,7 @@ const ColorCard = ({ id, color, hex }) => {
                 <h5 className="card-title">{hex}</h5>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ColorCard
+export default ColorCard;

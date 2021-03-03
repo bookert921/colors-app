@@ -13,13 +13,13 @@ const ColorDetails = () => {
         const fetchColors = async () => {
             try {
                 const response = await ColorsDB.get(`/api/v1/colors/${id}`);
-                const color = await response.data.color
+                const color = await response.data.color;
                 setSelectedColor(color);
             } catch (err) {
                 console.error(err);
             }
         }
-        fetchColors()
+        fetchColors();
     }, [id, setSelectedColor]);
 
     const color = selectedColor.color_name;

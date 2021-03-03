@@ -5,6 +5,7 @@ import './SearchBar.styles.css';
 
 const SearchBar = ({ placeholder }) => {
     const { searchField, setSearchField } = useContext(ColorsContext);
+
     const handleSearch = (e) => {
         setSearchField(e.target.value)
     }

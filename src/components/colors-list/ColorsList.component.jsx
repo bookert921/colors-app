@@ -20,9 +20,9 @@ const ColorsList = ({ colors, setColors, currentPage }) => {
                 setLoading(false);
             } catch (err) {
                 console.error(err);
-            }
-        }
-        fetchData()
+            };
+        };
+        fetchData();
     }, [setColors]);
 
     if (loading) {

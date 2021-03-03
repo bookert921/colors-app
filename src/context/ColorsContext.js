@@ -5,6 +5,7 @@ export const ColorsContext = createContext();
 const ColorsContextProvider = (props) => {
     const [colors, setColors] = useState([]);
     const [selectedColor, setSelectedColor] = useState([]);
+    const [randomColor, setRandomColor] = useState(1);
     const [searchField, setSearchField] = useState('');
 
     return (
@@ -14,6 +15,8 @@ const ColorsContextProvider = (props) => {
                 setColors,
                 selectedColor,
                 setSelectedColor,
+                randomColor,
+                setRandomColor,
                 searchField,
                 setSearchField
             }}>

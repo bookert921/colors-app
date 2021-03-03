@@ -3,13 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import ColorsContextProvider from './context/ColorsContext';
 
 /* PAGES */
+import Header from './components/header/Header.component';
+import SideBar from './components/sidebar/SideBar.component';
 import Home from './pages/Home/Home';
 import ColorDetailsPage from './pages/ColorDetails/ColorDetailsPage';
+import ColorGroups from './pages/ColorGroups/ColorGroups';
 
 /* STYLES */
 import './App.css';
-import Header from './components/header/Header.component';
-import SideBar from './components/sidebar/SideBar.component';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/colors/:id" component={ColorDetailsPage} />
+            <Route exact path="/colors/group/:id" component={ColorGroups} />
           </Switch>
         </main>
       </div>
