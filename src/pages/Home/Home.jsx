@@ -1,43 +1,33 @@
-import React from 'react';
-import ColorsList from '../../components/colors-list/ColorsList.component';
-import Header from '../../components/header/Header.component';
-import SideBar from '../../components/sidebar/SideBar.component';
-import ColorsListView from '../ColorDetails/ColorDetails';
+import React, { useContext, useState } from 'react';
+import { ColorsContext } from '../../context/ColorsContext';
 
+import ColorsList from '../../components/colors-list/ColorsList.component';
+import Pagination from '../../components/pagination/Pagination.component';
 
 import './Home.styles.css';
 
-const Home = ({
-    colors,
-    currentPage,
-    paginate,
-    loading,
-    searchColors,
-    handleSearch }) => {
+const Home = () => {
+    const { colors, setColors } = useContext(ColorsContext);
+    const [currentPage, setCurrentPage] = useState(1);
 
-    // Colors View (Pagination Magic)
-    // const colorsPerPage = 12;
-    // const indexOfLastColorSet = currentPage * colorsPerPage;
-    // const indexOfFirstColorSet = indexOfLastColorSet - colorsPerPage;
-    // const currentColors = colors.slice(indexOfFirstColorSet, indexOfLastColorSet);
+    const pageNumbers = [];
+
+    const allColors = colors.length;
+    const colorsPerPage = 12;
+
+    for (let i = 1; i <= Math.ceil(allColors / colorsPerPage); i++) {
+        pageNumbers.push(i);
+    };
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
+
     return (
-        <>
-            <ColorsList />
-            {/* <Header
-                searchFunction={handleSearch}
-                searchField={searchColors} />
-            <main className="content-container">
-                <SideBar />
-                <div className="showpiece"></div>
-                <ColorsListView
-                    colors={colors}
-                    searchColors={searchColors}
-                    colorsPerPage={colorsPerPage}
-                    paginate={paginate}
-                    loading={loading}
-                    currentColors={currentColors} />
-            </main> */}
-        </>
+        <div className="list-view">
+            <ColorsList colors={colors} setColors={setColors} currentPage={currentPage} />
+            <Pagination paginate={paginate} pageNumbers={pageNumbers} />
+        </div>
     )
 }
 

@@ -1,13 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Pagination = ({ colorsPerPage, allColors, paginate }) => {
-    const pageNumbers = [];
 
-    for (let i = 1; i <= Math.ceil(allColors / colorsPerPage); i++) {
-        pageNumbers.push(i);
-    };
 
+const Pagination = ({ paginate, pageNumbers }) => {
     return (
         <div className="pagination-container">
             <nav>
@@ -21,7 +17,7 @@ const Pagination = ({ colorsPerPage, allColors, paginate }) => {
                     ))}
                 </ul>
             </nav>
-        </div>
+        </div >
     );
 };
 
