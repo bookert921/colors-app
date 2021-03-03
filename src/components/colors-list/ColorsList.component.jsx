@@ -14,7 +14,7 @@ const ColorsList = ({ colors, setColors, currentPage }) => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await ColorsDB
+                const response = await ColorsDB.get('/api/v1/colors')
                 const colors = await response.data.colors
                 setColors(colors);
                 setLoading(false);

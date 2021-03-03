@@ -11,7 +11,6 @@ const ColorCard = ({ id, color, hex }) => {
     }
 
     return (
-
         <div className="card" onClick={() => handleColorSelect(id)} >
             <div className="card-img-top"
                 style={{ backgroundColor: hex }}

@@ -4,7 +4,7 @@ import ColorsContextProvider from './context/ColorsContext';
 
 /* PAGES */
 import Home from './pages/Home/Home';
-import ColorDetails from './pages/ColorDetails/ColorDetails';
+import ColorDetailsPage from './pages/ColorDetails/ColorDetailsPage';
 
 /* STYLES */
 import './App.css';
@@ -20,7 +20,7 @@ const App = () => {
           <SideBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/colors/:id" component={ColorDetails} />
+            <Route exact path="/colors/:id" component={ColorDetailsPage} />
           </Switch>
         </main>
       </div>
