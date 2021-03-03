@@ -1,13 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import './ColorCard.styles.css';
-import { useHistory } from 'react-router-dom';
 
 
 const ColorCard = ({ id, color, hex }) => {
+    let history = useHistory();
 
     const handleColorSelect = (id) => {
-        useHistory.pushState(`/colors/${id}`)
+        history.push(`/colors/${id}`)
     }
 
     return (

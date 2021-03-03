@@ -50,9 +50,9 @@ const ColorsList = ({ colors, setColors, currentPage }) => {
             return;
         }
         if (searchField) {
-            allCards.push(<ColorCard key={id} hex={hex_value} color={color_name} />)
+            allCards.push(<ColorCard key={id} id={id} hex={hex_value} color={color_name} />)
         } else {
-            allCards.push(<ColorCard key={id} hex={hex_value} color={color_name} />)
+            allCards.push(<ColorCard key={id} id={id} hex={hex_value} color={color_name} />)
         }
     })
 
