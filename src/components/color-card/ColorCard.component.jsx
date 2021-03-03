@@ -1,10 +1,18 @@
 import React from 'react';
 
-import './ColorCard.styles.css'
+import './ColorCard.styles.css';
+import { useHistory } from 'react-router-dom';
 
-const ColorCard = ({ color, hex }) => {
+
+const ColorCard = ({ id, color, hex }) => {
+
+    const handleColorSelect = (id) => {
+        useHistory.pushState(`/colors/${id}`)
+    }
+
     return (
-        <div className="card" >
+
+        <div className="card" onClick={() => handleColorSelect(id)} >
             <div className="card-img-top"
                 style={{ backgroundColor: hex }}
                 title={color}

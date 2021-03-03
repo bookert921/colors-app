@@ -5,7 +5,8 @@ import SearchBar from '../search/SearchBar.component.jsx';
 import logo from '../../assets/logo-symbol.svg';
 import './Header.styles.css';
 
-const Header = ({ searchField, searchFunction }) => {
+const Header = () => {
+
     return (
         <nav className="navbar" >
             <div className="container-fluid">
@@ -14,10 +15,7 @@ const Header = ({ searchField, searchFunction }) => {
                         <img src={logo} alt="" />
                     </div>
                 </a>
-                <SearchBar
-                    placeholder="Search"
-                    searchField={searchField}
-                    searchFunction={searchFunction} />
+                <SearchBar placeholder="Search" />
             </div>
         </nav>
     )

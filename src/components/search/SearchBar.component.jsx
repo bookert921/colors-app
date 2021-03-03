@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ColorsContext } from '../../context/ColorsContext';
 
 import './SearchBar.styles.css';
 
-const SearchBar = ({
-    searchFunction,
-    searchField,
-    placeholder }) => {
-
+const SearchBar = ({ placeholder }) => {
+    const { searchField, setSearchField } = useContext(ColorsContext);
     const handleSearch = (e) => {
-        searchFunction(e.target.value)
+        setSearchField(e.target.value)
     }
 
     return (
