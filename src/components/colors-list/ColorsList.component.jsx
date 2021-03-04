@@ -49,11 +49,7 @@ const ColorsList = ({ colors, setColors, currentPage }) => {
         if (color_name.toLowerCase().indexOf(searchField.toLowerCase()) === -1) {
             return;
         }
-        if (searchField) {
-            allCards.push(<ColorCard key={id} id={id} hex={hex_value} color={color_name} />)
-        } else {
-            allCards.push(<ColorCard key={id} id={id} hex={hex_value} color={color_name} />)
-        }
+        allCards.push(<ColorCard key={id} id={id} hex={hex_value} color={color_name} />)
     })
 
     /* Pagination View */
