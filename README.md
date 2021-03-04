@@ -4,11 +4,11 @@ A challenge from Helpful Human (see challenge https://github.com/HelpfulHuman/in
 
 ## Features
 
-### \* Search a paginated database of 100 colors.
+* Search a paginated database of 100 colors.
 
-### \* Click on colors swatches to view details.
+* Click on colors swatches to view details.
 
-### \* Find random colors.
+* Find random colors.
 
 ## Overview
 
