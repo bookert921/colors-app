@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # COLOR SWATCH APP
 
 A challenge from Helpful Human (see challenge https://github.com/HelpfulHuman/interview-challenge).
@@ -23,3 +24,6 @@ All things considered you have 2-3 days to deliver and this is what I came up wi
 ### ![search](./search.png)
 
 ### ![details](./details.png)
+=======
+
+>>>>>>> 006b2cf779ee358b8a622ffb24e180d15b1c3491
