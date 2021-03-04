@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # COLOR SWATCH APP
 
 A challenge from Helpful Human (see challenge https://github.com/HelpfulHuman/interview-challenge).
@@ -19,11 +18,8 @@ As a bonus you could create a graphQL endpoint, generate color list from a scrip
 
 All things considered you have 2-3 days to deliver and this is what I came up with in that timeframe.
 
-### ![home](./home.png)
+### ![home](./public/home.png)
 
-### ![search](./search.png)
+### ![search](./public/search.png)
 
-### ![details](./details.png)
-=======
-
->>>>>>> 006b2cf779ee358b8a622ffb24e180d15b1c3491
+### ![details](./public/details.png)
