@@ -30,7 +30,7 @@ const ColorDetails = () => {
             <div className="showcolor-card-img-top"
                 style={{ backgroundColor: hex }}
                 title={color}
-                alt={color}></div>
+                alt={color}><div className="showcolor-name">{color}</div></div>
             <div className="showcolor-card-body">
                 <h5 className="showcolor-card-title">{hex}</h5>
             </div>
