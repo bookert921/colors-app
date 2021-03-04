@@ -34,8 +34,6 @@ Axios was used to fetch data from my server just to make my life easier and Fire
 
 ### Some of the most useful code snippets include:
 
-### ![viewport](./public/viewport.png)
-
 ```
  const allCards = [];
 
